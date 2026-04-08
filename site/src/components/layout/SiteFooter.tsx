@@ -8,9 +8,9 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/logo.png"
+                src="/logo-white.png"
                 alt="Department of Logistics"
-                className="h-8 w-8 brightness-0 invert"
+                className="h-8 w-8"
               />
               <span className="text-sm font-semibold tracking-widest uppercase">
                 Logistics HQ
@@ -58,7 +58,10 @@ export function SiteFooter() {
             >
               Instagram — @logistics_hq
             </a>
-            <div className="mt-6 pt-6 border-t border-border-dark">
+            <div className="mt-6 pt-6 border-t border-border-dark space-y-1">
+              <p className="text-xs text-text-inverse-muted">
+                Chief of Staff — Director's Office
+              </p>
               <p className="text-xs text-text-inverse-muted font-mono">
                 Recovery Division — Operational 24/7
               </p>

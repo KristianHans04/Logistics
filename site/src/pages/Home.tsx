@@ -11,9 +11,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(30,58,95,0.3)_0%,_transparent_70%)]" />
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <motion.img
-            src="/logo.png"
+            src="/logo-white.png"
             alt="Department of Logistics"
-            className="mb-8 h-20 w-20 brightness-0 invert opacity-90"
+            className="mb-8 h-20 w-20 opacity-90"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 0.9, scale: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -141,7 +141,7 @@ export default function Home() {
                 Failure to comply will result in review by the Recovery Division.
               </p>
               <p className="mt-6 text-sm text-text-muted font-medium">
-                -- Office of the Director
+                -- Chief of Staff, Director's Office
               </p>
             </div>
           </ScrollReveal>

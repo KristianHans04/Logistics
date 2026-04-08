@@ -1,12 +1,49 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 
-export default function Intake() {
-  const [submitted, setSubmitted] = useState(false);
+interface FormState {
+  name: string;
+  handle: string;
+  contact: string;
+  type: string;
+  referral: string;
+  message: string;
+}
 
-  function handleSubmit(e: FormEvent) {
+const INITIAL: FormState = {
+  name: "",
+  handle: "",
+  contact: "",
+  type: "",
+  referral: "",
+  message: "",
+};
+
+export default function Intake() {
+  const [form, setForm] = useState<FormState>(INITIAL);
+  const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
+
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("submitting");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("done");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -32,7 +69,7 @@ export default function Intake() {
       {/* Form */}
       <section className="pb-24 sm:pb-32">
         <div className="mx-auto max-w-2xl px-6">
-          {submitted ? (
+          {status === "done" ? (
             <ScrollReveal>
               <div className="border border-border p-8 sm:p-12 text-center">
                 <h2 className="text-2xl font-semibold mb-4">
@@ -53,10 +90,7 @@ export default function Intake() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                 {/* Name */}
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
                     Full Name
                   </label>
                   <input
@@ -64,23 +98,24 @@ export default function Intake() {
                     name="name"
                     type="text"
                     required
+                    value={form.name}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-navy transition-colors"
                     placeholder="As it appears on official documents"
                   />
                 </div>
 
-                {/* Handle / callsign */}
+                {/* Handle */}
                 <div>
-                  <label
-                    htmlFor="handle"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="handle" className="block text-sm font-medium text-text mb-2">
                     Callsign / Handle
                   </label>
                   <input
                     id="handle"
                     name="handle"
                     type="text"
+                    value={form.handle}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-navy transition-colors"
                     placeholder="What the boys call you"
                   />
@@ -88,10 +123,7 @@ export default function Intake() {
 
                 {/* Contact */}
                 <div>
-                  <label
-                    htmlFor="contact"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="contact" className="block text-sm font-medium text-text mb-2">
                     Contact Method
                   </label>
                   <input
@@ -99,6 +131,8 @@ export default function Intake() {
                     name="contact"
                     type="text"
                     required
+                    value={form.contact}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-navy transition-colors"
                     placeholder="Email, phone, or preferred channel"
                   />
@@ -106,39 +140,37 @@ export default function Intake() {
 
                 {/* Inquiry type */}
                 <div>
-                  <label
-                    htmlFor="type"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="type" className="block text-sm font-medium text-text mb-2">
                     Inquiry Type
                   </label>
                   <select
                     id="type"
                     name="type"
                     required
+                    value={form.type}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text outline-none focus:border-navy transition-colors appearance-none"
                   >
                     <option value="">Select one</option>
-                    <option value="clearance">Clearance Application</option>
-                    <option value="debrief">Debrief Submission</option>
-                    <option value="recovery">Recovery Report</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="complaint">Compliance Complaint</option>
+                    <option value="Clearance Application">Clearance Application</option>
+                    <option value="Debrief Submission">Debrief Submission</option>
+                    <option value="Recovery Report">Recovery Report</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Compliance Complaint">Compliance Complaint</option>
                   </select>
                 </div>
 
                 {/* Referral */}
                 <div>
-                  <label
-                    htmlFor="referral"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="referral" className="block text-sm font-medium text-text mb-2">
                     Referred By
                   </label>
                   <input
                     id="referral"
                     name="referral"
                     type="text"
+                    value={form.referral}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-navy transition-colors"
                     placeholder="Name of the operative who sent you (if applicable)"
                   />
@@ -146,10 +178,7 @@ export default function Intake() {
 
                 {/* Message */}
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-text mb-2"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
                     Details
                   </label>
                   <textarea
@@ -157,22 +186,30 @@ export default function Intake() {
                     name="message"
                     required
                     rows={5}
+                    value={form.message}
+                    onChange={handleChange}
                     className="w-full border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-navy transition-colors resize-y"
                     placeholder="Describe your situation. Be specific. Be honest."
                   />
                 </div>
 
+                {status === "error" && (
+                  <p className="text-sm text-red-600">
+                    Something went wrong. Please try again or reach out directly.
+                  </p>
+                )}
+
                 {/* Submit */}
                 <div>
                   <button
                     type="submit"
-                    className="bg-navy px-8 py-3 text-sm font-medium text-white hover:bg-navy/90 transition-colors cursor-pointer"
+                    disabled={status === "submitting"}
+                    className="bg-navy px-8 py-3 text-sm font-medium text-white hover:bg-navy/90 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit
+                    {status === "submitting" ? "Submitting..." : "Submit"}
                   </button>
                   <p className="mt-3 text-xs text-text-muted">
-                    All submissions are confidential and reviewed within 72
-                    hours.
+                    All submissions are confidential and reviewed within 72 hours.
                   </p>
                 </div>
               </form>
@@ -187,8 +224,8 @@ export default function Intake() {
           <ScrollReveal>
             <p className="text-sm text-text-muted">
               For urgent matters involving the Recovery Division, do not use
-              this form. Contact the Director's Office directly through
-              established internal channels.
+              this form. Contact the Chief of Staff through established internal
+              channels.
             </p>
           </ScrollReveal>
         </div>

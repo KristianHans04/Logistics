@@ -20,7 +20,7 @@ export function SiteHeader() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-surface/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3 no-underline">
-          <img src="/logo.png" alt="Department of Logistics" className="h-8 w-8" />
+          <img src="/logo-transparent.png" alt="Department of Logistics" className="h-10 w-10" />
           <span className="text-sm font-semibold tracking-widest text-text uppercase">
             Logistics HQ
           </span>
