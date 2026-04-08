@@ -125,10 +125,10 @@ export default function Operations() {
                     {div.link && (
                       <Link
                         to={div.link}
-                        className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-navy no-underline hover:underline"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-navy no-underline hover:gap-3 transition-all duration-200 group"
                       >
                         Recovery Division
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                       </Link>
                     )}
                   </div>

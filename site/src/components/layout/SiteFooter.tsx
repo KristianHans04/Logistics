@@ -37,8 +37,9 @@ export function SiteFooter() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="text-sm text-text-inverse-muted no-underline hover:text-text-inverse transition-colors"
+                  className="group flex items-center gap-1.5 text-sm text-text-inverse-muted no-underline hover:text-text-inverse transition-colors duration-200"
                 >
+                  <span className="inline-block w-0 overflow-hidden opacity-0 transition-all duration-200 group-hover:w-3 group-hover:opacity-100 text-text-inverse-muted">—</span>
                   {link.label}
                 </Link>
               ))}

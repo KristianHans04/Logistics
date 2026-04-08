@@ -109,8 +109,8 @@ export default function Home() {
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="bg-surface-muted p-8 sm:p-10 h-full">
-                  <h3 className="text-base font-semibold text-text mb-3">
+                <div className="group bg-surface-muted p-8 sm:p-10 h-full border border-transparent hover:border-border hover:bg-surface transition-all duration-200 cursor-default">
+                  <h3 className="text-base font-semibold text-text mb-3 transition-colors duration-200 group-hover:text-navy">
                     {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-text-secondary">
@@ -178,11 +178,11 @@ export default function Home() {
               <ScrollReveal key={item.to} delay={i * 0.1}>
                 <Link
                   to={item.to}
-                  className="group block border border-border-dark p-8 sm:p-10 no-underline hover:border-steel transition-colors h-full"
+                  className="group block border border-border-dark p-8 sm:p-10 no-underline hover:border-steel hover:-translate-y-1 hover:bg-white/5 transition-all duration-200 h-full"
                 >
                   <h3 className="text-lg font-semibold text-text-inverse mb-3 flex items-center gap-2">
                     {item.title}
-                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
                   </h3>
                   <p className="text-sm text-text-inverse-muted leading-relaxed">
                     {item.desc}

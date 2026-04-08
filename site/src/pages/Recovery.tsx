@@ -179,7 +179,7 @@ export default function Recovery() {
             </p>
             <Link
               to="/intake"
-              className="inline-flex items-center gap-2 border border-text-inverse-muted px-6 py-3 text-sm font-medium text-text-inverse no-underline hover:bg-white/5 transition-colors"
+              className="inline-flex items-center gap-2 border border-text-inverse-muted px-6 py-3 text-sm font-medium text-text-inverse no-underline hover:bg-white/10 hover:border-white hover:-translate-y-px active:translate-y-0 transition-all duration-200"
             >
               Contact the Department
               <ArrowRight className="w-3.5 h-3.5" />

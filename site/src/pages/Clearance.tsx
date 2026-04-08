@@ -232,7 +232,7 @@ export default function Clearance() {
             </p>
             <Link
               to="/intake"
-              className="inline-flex items-center gap-2 bg-navy px-6 py-3 text-sm font-medium text-white no-underline hover:bg-navy/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-navy px-6 py-3 text-sm font-medium text-white no-underline hover:bg-navy-light hover:-translate-y-px active:translate-y-0 transition-all duration-200"
             >
               Start Intake Process
               <ArrowRight className="w-3.5 h-3.5" />
