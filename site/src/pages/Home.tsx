@@ -6,9 +6,15 @@ import { ArrowRight } from "@/components/icons";
 export default function Home() {
   return (
     <>
-      {/* Opening -- full viewport, dark, cinematic */}
-      <section className="relative flex min-h-screen items-center justify-center bg-surface-dark overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(30,58,95,0.3)_0%,_transparent_70%)]" />
+      {/* Opening -- full viewport, cinematic with bg image */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+        />
+        {/* Navy overlay at ~75% opacity */}
+        <div className="absolute inset-0 bg-surface-dark/80" />
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <motion.img
             src="/logo-white.png"

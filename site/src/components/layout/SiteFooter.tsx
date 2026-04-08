@@ -32,7 +32,6 @@ export function SiteFooter() {
                 { href: "/clearance", label: "Clearance" },
                 { href: "/protocols", label: "Protocols" },
                 { href: "/recovery", label: "Recovery" },
-                { href: "/dispatches", label: "Dispatches" },
                 { href: "/intake", label: "Intake" },
               ].map((link) => (
                 <Link

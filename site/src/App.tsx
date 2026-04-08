@@ -5,7 +5,6 @@ import Operations from "@/pages/Operations";
 import Clearance from "@/pages/Clearance";
 import Protocols from "@/pages/Protocols";
 import Recovery from "@/pages/Recovery";
-import Dispatches from "@/pages/Dispatches";
 import Intake from "@/pages/Intake";
 
 export default function App() {
@@ -17,7 +16,6 @@ export default function App() {
         <Route path="/clearance" element={<Clearance />} />
         <Route path="/protocols" element={<Protocols />} />
         <Route path="/recovery" element={<Recovery />} />
-        <Route path="/dispatches" element={<Dispatches />} />
         <Route path="/intake" element={<Intake />} />
       </Routes>
     </PageLayout>
