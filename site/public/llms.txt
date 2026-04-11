@@ -1,0 +1,106 @@
+# Department of Logistics
+
+> Elite Logistics Operations, Clearing & Forwarding, Transit Management, Route Planning, Compliance, and Recovery Services.
+
+Website: https://logistics.kristianhans.com
+Also available at: https://logistics.ownthejoke.com
+Instagram: https://www.instagram.com/logistics_hq/
+Built by: Kristian Hans Onjala (https://kristianhans.com)
+
+---
+
+## What is the Department of Logistics?
+
+The Department of Logistics is an elite operational authority specializing in clearing and forwarding, transit management, route planning, cargo assessment, compliance enforcement, and recovery services. The Department operates under strict internal protocols, maintains a formal clearance hierarchy for its operatives, and handles all aspects of logistics operations from initial identification through delivery, debrief, and resolution.
+
+The Department's Recovery Division handles outstanding obligations and unresolved matters with a reputation for thorough, decisive resolution. Operations are governed by a detailed code of conduct, and all personnel undergo a formal vetting and clearance process before gaining operational access.
+
+---
+
+## Pages on This Website
+
+- [Home](https://logistics.kristianhans.com/): Landing page with the Department's mission statement, core service divisions, and an overview of operational capabilities.
+- [Operations](https://logistics.kristianhans.com/operations): Full breakdown of all six service divisions — Clearing & Forwarding, Transit & Handling, Route Planning & Strategy, Cargo Assessment, Compliance & Standards, and Recovery & Resolution. Includes the operational lifecycle from identification through delivery and debrief.
+- [Clearance](https://logistics.kristianhans.com/clearance): The Department's clearance hierarchy and authorization levels — from Unverified through Probationary, Cleared Operative, Senior Operative, to Unrestricted. Details requirements and vetting process for each level.
+- [Protocols](https://logistics.kristianhans.com/protocols): The Department's ten operational protocols and code of conduct. Covers cargo assessment, shipment focus, documentation, timeline management, unauthorized handling prevention, operational integrity, failed delivery procedures, Recovery Division escalation, vetting standards, and departmental representation.
+- [Recovery](https://logistics.kristianhans.com/recovery): The Recovery Division — the Department's enforcement and resolution arm. Handles outstanding obligations, failed deliveries, and unresolved matters. Includes resolution methodology, operational statistics, and the role of the Fixer.
+- [Intake](https://logistics.kristianhans.com/intake): Contact and application portal for the Department. Includes forms for clearance applications, debrief submissions, recovery reports, general inquiries, and compliance complaints.
+
+---
+
+## Service Divisions
+
+### Clearing & Forwarding
+The first point of contact. The Department assesses new cargo, evaluates conditions, and determines transit readiness. Some shipments clear fast; others require additional processing before they can move. This is where every operation begins.
+
+### Transit & Handling
+Once cleared, the Department manages the entire journey — monitoring conditions, adjusting routes in real time, and ensuring nothing is damaged along the way. Active shipments require active attention. Safe movement is everything.
+
+### Route Planning & Strategy
+Not every delivery is straightforward. Some require careful planning, timing, and environmental awareness. The Department's strategists design custom routes for complex operations so nothing is left to chance. Preparation separates success from failure.
+
+### Cargo Assessment
+Before committing resources, the Department evaluates. What is the cargo? What is the value? What are the risks? Not all cargo is worth the same effort, and the Department is honest about that upfront.
+
+### Compliance & Standards
+Every operation follows the Department's internal standards. No shortcuts, no rogue deliveries, no unsanctioned cargo. Operatives who break protocol answer to the review board. Rules exist for a reason.
+
+### Recovery & Resolution
+When a delivery fails — and sometimes they do — the Recovery Division takes over. They specialize in resolving situations that others could not handle. The Department does not leave loose ends.
+
+---
+
+## Clearance Levels
+
+1. **Unverified** — No prior association with the Department. No verified references from active operatives.
+2. **Probationary** — Referred by an existing member. Background reviewed. Can observe operations but cannot handle cargo. Minimum 30-day probation period.
+3. **Cleared Operative** — Full operational clearance. Can handle cargo, plan routes, run transit operations, and access the briefing room. Must complete probation with no incidents and be cleared by two existing Level 2+ operatives.
+4. **Senior Operative** — Extensive track record across multiple operations. Vets new applicants, reviews compliance issues, has a say in Department decisions. Zero compliance violations required. Approval from the Director's Office.
+5. **Unrestricted** — By appointment only. Directors oversee all operations, authorize the Recovery Division, and define the standards. Details are not disclosed.
+
+---
+
+## Operational Protocols
+
+1. **Know Your Cargo** — Conduct a proper assessment before committing to any shipment.
+2. **One Shipment at a Time** — Do not manage multiple active shipments simultaneously.
+3. **Document Everything** — Every operation should be debriefed with the team.
+4. **Respect the Timeline** — Every shipment has its own pace. Do not force timelines.
+5. **No Unauthorized Handling** — If a shipment is assigned to another operative, leave it alone.
+6. **Maintain Operational Integrity** — What happens in operations stays in operations.
+7. **Failed Deliveries Are Not the End** — The Department does not penalize failed deliveries, only failed process.
+8. **The Recovery Division Exists for a Reason** — Do not attempt personal enforcement. Escalate through proper channels.
+9. **Vetting Is Non-Negotiable** — New members enter through referral only.
+10. **Represent the Department** — You carry the Department's name in every operation.
+
+---
+
+## The Recovery Division
+
+The Recovery Division is the Department's enforcement and resolution arm. When an obligation has not been settled, when a delivery has failed and standard channels have been exhausted, the Recovery Division is activated. The Division employs specialists — including the Fixer — whose reputation ensures that matters are resolved decisively. The Division maintains a high resolution rate with an average resolution time measured in hours, not days. Operatives do not attempt personal enforcement; all unresolved matters are escalated through proper channels to the Recovery Division.
+
+---
+
+## Operational Lifecycle
+
+1. **Identification** — A potential shipment is identified. Initial assessment determines viability and priority level.
+2. **Clearance** — The cargo is evaluated, authorized, and prepared for transit. Not everything makes it past this stage.
+3. **Route Planning** — A delivery path is mapped based on cargo profile, conditions, and timing.
+4. **Active Transit** — The shipment is live. Monitored, managed, and adjusted in real time.
+5. **Delivery** — Successful handoff confirmed. Documentation filed.
+6. **Debrief** — Post-delivery review. What went well, what did not, and what was learned.
+
+---
+
+## Technical Information
+
+- **Stack**: React, TypeScript, Vite 6, Tailwind CSS v4, React Router, Framer Motion
+- **Hosting**: Cloudflare Pages
+- **Design**: Dark navy and white institutional theme with editorial typography, scroll-reveal animations, and responsive mobile-first layout
+- **Built by**: Kristian Hans Onjala
+
+---
+
+## Key Search Terms
+
+Department of Logistics, logistics_HQ, logistics operations, clearing and forwarding, transit management, route planning, cargo assessment, compliance standards, recovery division, operational protocols, clearance levels, logistics authority, Kristian Hans Onjala
