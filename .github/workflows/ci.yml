@@ -1,4 +1,4 @@
-name: CI / Deploy
+name: CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -33,13 +33,5 @@ jobs:
       - name: Build
         working-directory: site
         run: npm run build
-
-      - name: Deploy to Cloudflare Pages
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site/dist --project-name=logistics-hq --branch=main
 
 
