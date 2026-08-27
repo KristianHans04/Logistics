@@ -17,54 +17,21 @@ jobs:
         permissions:
             contents: read
 
-        services:
-            postgres:
-                image: postgres:latest
-                env:
-                    POSTGRES_USER: postgres
-                    POSTGRES_PASSWORD: password
-                    POSTGRES_DB: test
-                ports: ["5432:5432"]
-                options: >-
-                    --health-cmd pg_isready
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-            redis:
-                image: redis
-                ports: ["6379:6379"]
-                options: >-
-                    --health-cmd "redis-cli ping"
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
-
         steps:
             - name: Checkout code
               uses: actions/checkout@v7
 
-            - name: Set up Ruby
-              uses: ruby/setup-ruby@v1
-              with:
-                  bundler-cache: true
-
             - name: Set up Node.js
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v7
               with:
-                  node-version-file: ".node-version"
-                  cache: "yarn"
-
-            - name: Install system dependencies
-              run: |
-                  sudo apt-get update -qq
-                  sudo apt-get install -y -qq libvips
+                  node-version: 22
+                  cache: "npm"
+                  cache-dependency-path: "site/package-lock.json"
 
             - name: Install JavaScript dependencies
-              run: yarn install --frozen-lockfile
+              working-directory: site
+              run: npm ci
 
-            - name: Prepare database
-              env:
-                  DATABASE_URL: postgres://postgres:password@localhost:5432/test
-                  REDIS_URL: redis://localhost:6379/0
-                  RAILS_ENV: test
-              run: bin/rails db:test:prepare
+            - name: Build project
+              working-directory: site
+              run: npm run build
